@@ -1,0 +1,83 @@
+body{
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    margin-top: 250px;
+    animation: anim 2s ease-in-out infinite;
+}
+/* 
+@keyframes anim{
+    0%{
+        background-color: red;
+    }
+    15%{
+        background-color: orange;
+    }
+    30%{
+        background-color: yellow;
+    }
+    40%{
+        background-color: green;
+    }
+    65%{
+        background-color: blue;
+    }
+    75%{
+        background-color: indigo;
+    }
+    100%{
+        background-color: red;
+    }
+    
+} */
+
+.circle{
+    position: relative;
+    margin-left:200px;
+}
+.circl{
+    position: relative;
+}
+span{
+    top: 0px;
+    left: 0px;
+    position:absolute;
+    width: 10px;
+    height:10px;
+    transform: rotate(calc(18deg*var(--l)));
+    
+}
+span::before{
+    content: "";
+    right: 100px;
+    position: absolute;
+    top:calc(50%-7.5);
+    width: 10px;
+    height:10px;
+    border-radius: 100%;
+    background-color: rgb(255, 20, 20);
+    animation: anime 2s linear infinite; 
+    animation-delay: calc(0.1s*var(--l));
+    box-shadow: 0px 0px 10px 0px rgb(128, 0, 0),
+    0px 0px 20px 0px rgb(128, 0, 0)
+    ,0px 0px 40px 0px rgb(128, 0, 0)
+    ,0px 0px 60px 5px rgb(128, 0, 0),0px 0px 80px 0px rgb(128, 0, 0),
+    0px 0px 100px 5px rgb(128, 0, 0);
+}
+.circl span::before{
+    animation-delay: calc(0.1s*var(--l));
+}
+.circle{
+    transform: rotate(-180deg);
+}
+@keyframes anime{
+    0%{
+        transform:scale(2);
+        filter:saturate(100);
+    }
+    50%,100%{
+        transform:scale(0);
+    }
+}
+
+
